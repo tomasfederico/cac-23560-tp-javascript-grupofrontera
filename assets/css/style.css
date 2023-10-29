@@ -1,0 +1,24 @@
+.carousel-item:after {
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,.4);
+    z-index: 1
+}
+
+.carousel-caption {
+    z-index: 2;
+}
+
+.grad {
+    background: rgb(43,39,65);
+    background: linear-gradient(90deg, rgba(43,39,65,1) 0%, rgba(56,52,110,1) 51%, rgba(61,58,115,1) 100%);
+}
+
+.underline-dotted {
+    text-decoration:underline;
+    text-decoration-style: dotted;
+}

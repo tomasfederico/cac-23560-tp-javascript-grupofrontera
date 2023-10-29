@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conf Bs As</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <div class="justify-content-rigth ms-5">
+        <img src="assets/img/codoacodo.png" width="90em" alt="Logo de Codo a Codo" />
+        <a class="navbar-brand text-white" href="#">Conf Bs As</a>
+      </div>
+
+      <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end me-5" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="index.html">La conferencia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50" href="#oradores">Los oradores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50" href="#lugarFecha">El lugar y la fecha</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50" href="#formOrador">Conviértete en orador</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-success" href="#">Comprar tickets</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CARDS WITH DISCOUNTS -->
+  <section class="col-9 mx-auto mb-3" id="cards-buy-ticket">
+    <div class="text-center">
+      <h1>Comprá tus tickets!</h1>
+      <div class="row row-cols-1 row-cols-sm-3 g-4 p-1">
+        <div class="col">
+          <div class="card" style="border-color:  rgb(85, 44, 249);">
+            <div class="card-body">
+              <h5 class="card-title">Estudiante</h5>
+              <p class="card-text">Tienen un descuento:</p>
+              <p class="card-text">80%</p>
+              <p class="card-text">*presentar documentacion</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="border-color: rgb(32, 244, 46);">
+            <div class="card-body">
+              <h5 class="card-title">Trainee</h5>
+              <p class="card-text">Tienen un descuento:</p>
+              <p class="card-text">50%</p>
+              <p class="card-text">*presentar documentacion</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="border-color: rgb(255, 225, 0);">
+            <div class="card-body">
+              <h5 class="card-title">Junior</h5>
+              <p class="card-text">Tienen un descuento:</p>
+              <p class="card-text">15%</p>
+              <p class="card-text">*presentar documentacion</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2>VALOR DE TICKET: $200</h2>
+      <p>Recordá que el máximo permitido son 5 tickets por compra.</p>
+    </div>
+  </section>
+
+  <!-- TICKETS FORM -->
+  <section id="section-form-ticket-purchase">
+    <form id="form-ticket-purchase" class="row col-9 mx-auto mb-2 align-items-center">
+
+      <!-- BASIC INFO -->
+      <div class="col-md-6 mb-2">
+        <label for="input-name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="input-name">
+      </div>
+
+      <div class="col-md-6 mb-2">
+        <label for="input-lastname" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="input-lastname">
+      </div>
+
+      <div class="col-12 mb-2">
+        <label for="input-email" class="form-label">Correo Electronico</label>
+        <input type="email" class="form-control" id="input-email" placeholder="youremail@email.com">
+      </div>
+
+      <!-- TICKETS STUDENTS INFO -->
+      <div class="col-9">
+        <label for="category-students" class="form-label">Categoria</label>
+        <input type="text" class="form-control" id="category-students" placeholder="Estudiantes" disabled>
+      </div>
+      <div class="col-3">
+        <label for="tickets-students" class="form-label">Cantidad</label>
+        <select id="tickets-students" class="form-select">
+          <option selected value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <!-- TICKETS TRAINEES INFO -->
+      <div class="col-9">
+        <label for="category-trainees" class="form-label"> </label>
+        <input type="text" class="form-control" id="category-trainees" placeholder="Trainees" disabled>
+      </div>
+      <div class="col-3">
+        <label for="tickets-trainees" class="form-label"></label>
+        <select id="tickets-trainees" class="form-select">
+          <option selected value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <!-- TICKETS JUNIORS INFO -->
+      <div class="col-9 mb-4">
+        <label for="category-juniors" class="form-label"> </label>
+        <input type="text" class="form-control" id="category-juniors" placeholder="Juniors" disabled>
+      </div>
+      <div class="col-3 mb-4">
+        <label for="tickets-juniors" class="form-label"> </label>
+        <select id="tickets-juniors" class="form-select">
+          <option selected value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <!-- AUTOMATIC TOTAL VALUE -->
+      <div class="col-12 mb-4">
+        <span id="total-cost-tickets" style="display: block;"
+          class="p-2 border border-info rounded bg-info bg-opacity-10 ">Total a pagar: $0
+        </span>
+      </div>
+
+      <!-- ERROR MESSAGE -->
+      <div class="col-12 mb-4">
+        <span id="error-message" style="display: block;"
+          class="p-2 container-fluid border border-danger rounded bg-opacity-10 bg-danger">Error: 
+        </span>
+      </div>
+
+      <!-- FORM BUTTONS -->
+      <div class="col-6 text-center d-grid">
+        <button onclick="reset_form()" id="button-reset" type="button" class="btn btn-danger btn-block">Reset</button>
+      </div>
+      <div class="col-6 text-center d-grid">
+        <button onclick="tickets_total_count()" id="button-purchase" type="button" class="btn btn-success btn-block">Comprar </button>
+      </div>
+
+    </form>
+  </section>
+
+  <footer class="text-white grad">
+    <div class="row col-md-8 mx-auto">
+      <div class="col">Preguntas frecuentes</div>
+      <div class="col">Contáctanos</div>
+      <div class="col">Prensa</div>
+      <div class="col">Conferencias</div>
+      <div class="col">Términos y condiciones</div>
+      <div class="col">Privacidad</div>
+      <div class="col">Estudiantes</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
