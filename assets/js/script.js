@@ -38,13 +38,19 @@ function tickets_total_count(){
     console.log(ticketsStudents);
     console.log(ticketsTrainees);
     console.log(ticketsJuniors);
-
-    let studentsTotal = TICKET_VALUE*(1-STUDENT_DISCOUNT)*ticketsStudents;
-    let traineesTotal = TICKET_VALUE*(1-TRAINEE_DISCOUNT)*ticketsTrainees;
-    let juniorsTotal = TICKET_VALUE*(1-JUNIOR_DISCOUNT)*ticketsJuniors;
-    let total = studentsTotal+traineesTotal+juniorsTotal;
     
+    let total
+
+    if (ticketsStudents + ticketsTrainees + ticketsJuniors > 5){
+        total = "-"
+    } else {
+        let studentsTotal = TICKET_VALUE*(1-STUDENT_DISCOUNT)*ticketsStudents;
+        let traineesTotal = TICKET_VALUE*(1-TRAINEE_DISCOUNT)*ticketsTrainees;
+        let juniorsTotal = TICKET_VALUE*(1-JUNIOR_DISCOUNT)*ticketsJuniors;
+        total = (studentsTotal+traineesTotal+juniorsTotal).toFixed(2);
+    }
     console.log("resultado final: " + total);
+    
     document.getElementById("total-cost-tickets").innerHTML = "Total a pagar: $" + total;
 }
 
