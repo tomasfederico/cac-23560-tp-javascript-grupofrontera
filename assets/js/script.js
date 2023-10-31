@@ -41,13 +41,13 @@ function tickets_total_count(){
     
     let total
 
-    if (ticketsStudents + ticketsTrainees + ticketsJuniors > 5){
-        total = "-"
-    } else {
+    if (valid_total_ticket_number()){
         let studentsTotal = TICKET_VALUE*(1-STUDENT_DISCOUNT)*ticketsStudents;
         let traineesTotal = TICKET_VALUE*(1-TRAINEE_DISCOUNT)*ticketsTrainees;
         let juniorsTotal = TICKET_VALUE*(1-JUNIOR_DISCOUNT)*ticketsJuniors;
         total = (studentsTotal+traineesTotal+juniorsTotal).toFixed(2);
+    } else {
+        total = "-"
     }
     console.log("resultado final: " + total);
     
@@ -63,3 +63,13 @@ function reset_form(){
     document.getElementById("error-message").hidden = true;
 }
 
+function valid_total_ticket_number() {
+    //VALIDA QUE LA CANTIDAD TOTAL DE TICKETS SEA VALIDA
+    //DEVUELVE TRUE EN CASO DE QUE LA CANTIDAD TOTAL DE TICKETS SEA MENOR O IGUAL A CINCO
+    //EN CASO CONTRARIO DEVUELVE FALSE
+    let ticketsStudents = parseInt(document.getElementById("tickets-students").value);
+    let ticketsTrainees = +document.getElementById("tickets-trainees").value; 
+    let ticketsJuniors = +document.getElementById("tickets-juniors").value;
+
+    return (ticketsJuniors + ticketsStudents + ticketsTrainees) <= 5
+}
