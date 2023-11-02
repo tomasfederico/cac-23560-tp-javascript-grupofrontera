@@ -8,6 +8,7 @@ const JUNIOR_DISCOUNT = 0.15;
 let ticketsStudents = document.getElementById("tickets-students");
 let ticketsTrainees = document.getElementById("tickets-trainees"); 
 let ticketsJuniors = document.getElementById("tickets-juniors"); 
+let ticketsGenerals = document.getElementById("tickets-generals"); 
 // EVENTLISTENERS PARA OBSERVAR VALORES DE LOS SELECTORES DE TKTS AL CAMBIARLOS
 ticketsStudents.addEventListener("change", function() {
     console.log("tkts students: " + ticketsStudents.value);
@@ -19,6 +20,10 @@ ticketsTrainees.addEventListener("change", function() {
 });
 ticketsJuniors.addEventListener("change", function() {
     console.log("tkts juniors: " + ticketsJuniors.value);
+    tickets_total_count();
+});
+ticketsGenerals.addEventListener("change", function() {
+    console.log("tkts generals: " + ticketsJuniors.value);
     tickets_total_count();
 });
 
@@ -34,10 +39,12 @@ function tickets_total_count(){
     let ticketsStudents = parseInt(document.getElementById("tickets-students").value);
     let ticketsTrainees = +document.getElementById("tickets-trainees").value; 
     let ticketsJuniors = +document.getElementById("tickets-juniors").value; 
+    let ticketsGenerals = +document.getElementById("tickets-generals").value; 
 
     console.log(ticketsStudents);
     console.log(ticketsTrainees);
     console.log(ticketsJuniors);
+    console.log(ticketsGenerals);
     
     let total
 
@@ -45,7 +52,8 @@ function tickets_total_count(){
         let studentsTotal = TICKET_VALUE*(1-STUDENT_DISCOUNT)*ticketsStudents;
         let traineesTotal = TICKET_VALUE*(1-TRAINEE_DISCOUNT)*ticketsTrainees;
         let juniorsTotal = TICKET_VALUE*(1-JUNIOR_DISCOUNT)*ticketsJuniors;
-        total = (studentsTotal+traineesTotal+juniorsTotal).toFixed(2);
+        let generalsTotal = TICKET_VALUE*ticketsGenerals;
+        total = (studentsTotal+traineesTotal+juniorsTotal+generalsTotal).toFixed(2);
     } else {
         total = "-"
     }
@@ -70,6 +78,7 @@ function valid_total_ticket_number() {
     let ticketsStudents = parseInt(document.getElementById("tickets-students").value);
     let ticketsTrainees = +document.getElementById("tickets-trainees").value; 
     let ticketsJuniors = +document.getElementById("tickets-juniors").value;
+    let ticketsGenerals = +document.getElementById("tickets-generals").value;
 
-    return (ticketsJuniors + ticketsStudents + ticketsTrainees) <= 5
+    return (ticketsJuniors + ticketsStudents + ticketsTrainees + ticketsGenerals) <= 5
 }
