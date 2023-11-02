@@ -54,8 +54,14 @@ function tickets_total_count(){
         let juniorsTotal = TICKET_VALUE*(1-JUNIOR_DISCOUNT)*ticketsJuniors;
         let generalsTotal = TICKET_VALUE*ticketsGenerals;
         total = (studentsTotal+traineesTotal+juniorsTotal+generalsTotal).toFixed(2);
+
+        document.getElementById("error-message").innerHTML = "";
+        document.getElementById("error-message").hidden = true;
     } else {
         total = "-"
+
+        document.getElementById("error-message").innerHTML = "Error: La cantidad total de tickets no puede ser superior a 5";
+        document.getElementById("error-message").hidden = false;
     }
     console.log("resultado final: " + total);
     
