@@ -73,3 +73,12 @@ function valid_total_ticket_number() {
 
     return (ticketsJuniors + ticketsStudents + ticketsTrainees) <= 5
 }
+
+//Funcion de fecha
+function DateTk() {
+    var f = new Date();
+    document.write(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+}
+
+
+
