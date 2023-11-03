@@ -195,7 +195,7 @@
         <button onclick="reset_form()" id="button-reset" type="button" class="btn btn-danger btn-block">Reset</button>
       </div>
       <div class="col-6 text-center d-grid">
-        <button onclick="tickets_total_count()" id="button-purchase" type="button" class="btn btn-success btn-block" data-bs-toggle="modal" data-bs-target="#resumen">Comprar </button>
+        <button onclick="tickets_total_count()" id="button-purchase" type="button" class="btn btn-success btn-block" data-bs-toggle="modal" data-bs-target="#resumen" aria-disabled="true">Comprar</button>
 
         <!-- Modal -->
         <div class="modal fade" id="resumen" tabindex="-1" aria-labelledby="resumenCompras" aria-hidden="true">
@@ -222,29 +222,25 @@
                   </div>
                   <hr class="m-0">
                   <div class="text-start" style="font-size: small;">
-                    <p class="lh-sm" style="margin: 0;">PV. </p>
-                    <p class="lh-sm" style="margin: 0;">CLIENTE: </p>
-                    <P class="lh-sm" style="margin: 0;">E-MAIL: </P>
+                    <p class="lh-sm" id="numPV" style="margin: 0;">PV. </p>
+                    <p class="lh-sm" id="comprador" style="margin: 0;">CLIENTE: </p>
+                    <P class="lh-sm" id="emailComprador" style="margin: 0;">E-MAIL: </P>
                     <div class="d-flex justify-content-between" style="margin: 0;">
-                      <p class="lh-sm" style="margin: 0;">dfg</p>
-                      <p class="lh-sm" id="hoursTk" style="margin: 0;"></p>
+                      <p class="lh-sm" id="fechaOutput" style="margin: 0;"></p>
+                      <p class="lh-sm" id="horaOutput" style="margin: 0;"></p>
                     </div>
                     <div class="d-flex justify-content-between" style="margin: 0;">
                       <p class="lh-sm" style="margin: 0;">NR.T.</p>
-                      <p class="lh-sm" style="margin: 0;">00000</p>
+                      <p class="lh-sm" id="numNR" style="margin: 0;">00000</p>
                     </div>
                   </div>
                   <hr class="m-1">
                   <div class="d-flex justify-content-between" style="margin: 0; font-size: small;">
-                    <p class="lh-sm" style="margin: 0;">BOLETO DE ENTRADA * </p>
-                    <p class="lh-sm" style="margin: 0;">00000</p>
+                    <p class="lh-sm" id="boletos" style="margin: 0;">BOLETO DE ENTRADA * </p>
+                    <p class="lh-sm" id="PrecioUnitario" style="margin: 0;"></p>
                   </div>
-                  <p class="lh-sm text-end" style="margin: 0; font-size: small;">00000</p>
+                  <p class="lh-sm text-end" id="PrecioTotal" style="margin: 0; font-size: small;"></p>
                   <hr class="m-1">
-                  <div class="d-flex justify-content-between" style="margin: 0; font-size: small;">
-                    <p class="lh-sm" style="margin: 0;">TOTAL</p>
-                    <p class="lh-sm" style="margin: 0;">$0000</p>
-                  </div>
                   <div class="d-flex justify-content-between" style="margin: 0; font-size: small;">
                     <p class="lh-sm" style="margin: 0;">DESC. ESTUDIANTE</p>
                     <p class="lh-sm" style="margin: 0;">$0000</p>
