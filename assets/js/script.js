@@ -87,6 +87,11 @@ function valid_total_ticket_number() {
 }
 
 function tickets_total_count() {
+    //SE HACE LLAMADO DE LOS INPUTS DE NOMBRE, APELLIDO Y MAIL
+    //SE GENERAN NUMEROS RANDOM PARA EL #DE TK
+    //SE HACE UN RESUMEN TOTAL DEL VALOR REAL DE LOS BOLETOS
+    //SE DESPLIEGAN DESCUENTOS POR BOLETO INDICANDO LO QUE SE RESTA AL TOTAL SI EL DESCUENTO APLICA
+    //SE MUESTRA EL MONTO TOTAL DE LO QUE SE VA A PAGAR
 
     //Numero de PV
     const numramdom = [1596, 2586, 6574, 4586, 9658, 1452, 3652];
@@ -132,7 +137,6 @@ function tickets_total_count() {
 
     //Cantidad de Boletos
     let cantidadBoletos = ticketsJuniorsNumber + ticketsStudentsNumber + ticketsTraineesNumber + ticketsGeneralsNumber;
-
     let boletos = document.createTextNode("(0" + cantidadBoletos + ")");
     document.getElementById('boletos').appendChild(boletos);
 
@@ -171,6 +175,7 @@ function tickets_total_count() {
         document.getElementById("secJunior").style.display = "block";
     }
 
+    //Monto Total
     let studentsTotal = TICKET_VALUE * (1 - STUDENT_DISCOUNT) * ticketsStudentsNumber;
     let traineesTotal = TICKET_VALUE * (1 - TRAINEE_DISCOUNT) * ticketsTraineesNumber;
     let juniorsTotal = TICKET_VALUE * (1 - JUNIOR_DISCOUNT) * ticketsJuniorsNumber;
